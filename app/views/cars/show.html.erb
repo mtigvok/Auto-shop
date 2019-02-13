@@ -2,3 +2,7 @@
 <%= @car.name %>
 <%= @car.desc %>
 <%= @car.price %>
+
+<% @car.photos.each do |t| %>
+<%= image_tag t.url, style:"width:500px;" %>
+<% end %>
