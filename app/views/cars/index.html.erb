@@ -7,6 +7,7 @@
 <% g.photos.each do |t| %>
 <%= image_tag t.url, style:"width:100px;" %>
 <% end %>
+<%= link_to "Read more", car_path(g.id) %>
 <br>
 <hr>
 <% end %>
