@@ -6,3 +6,17 @@
 <% @car.photos.each do |t| %>
 <%= image_tag t.url, style:"width:500px;" %>
 <% end %>
+<hr>
+
+<%= form_for :comment, url:comments_path do |f| %>
+<%= render 'comments/form', f:f%>
+<%= f.hidden_field :object_type, value: @car.class.name%>
+<%= f.hidden_field :object_id, value: @car.id%>
+<%= f.submit "Create" %>
+<% end %>
+
+<% Comment.where(object: @car).each do |t| %>
+<br>User:
+<%= t.user.email.split('@').first %><br>
+<%=t.body%>
+<%end%>

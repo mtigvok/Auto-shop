@@ -1,10 +1,12 @@
+<br>
 <% @cars.each do |g| %>
 <%= g.name %>
 <%= g.desc %>
 <%= g.price %>
-
+<br>
 <% g.photos.each do |t| %>
 <%= image_tag t.url, style:"width:100px;" %>
 <% end %>
-
+<br>
+<hr>
 <% end %>
